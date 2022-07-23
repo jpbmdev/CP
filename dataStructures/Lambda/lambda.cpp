@@ -18,4 +18,17 @@ int main()
     increment(num);
 
     cout << num;
+
+    // We can also define the return type of a lambda
+    auto lowerCase = [](char value) -> char
+    {
+        if (value > 64 && value < 91)
+        {
+            return value + 32;
+        }
+        else
+        {
+            return value;
+        }
+    };
 }

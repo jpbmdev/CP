@@ -17,30 +17,20 @@ bool solution(string ransomNote, string magazine)
     for(int i = 0; i < 26; i++) if(r[i] > m[i]) return false;
     return true;
 
-    get the ascii of a char 
+    get the ascii of a char
     cout << int('a') << endl;
     */
     unordered_map<char, int> umap;
     for (int i = 0; i < magazine.length(); i++)
     {
-        if (umap[magazine[i]])
-        {
-            umap[magazine[i]] = umap[magazine[i]] += 1;
-        }
-        else
-        {
-            umap[magazine[i]] = 1;
-        }
+        umap[magazine[i]]++;
     }
 
     for (int i = 0; i < ransomNote.length(); i++)
     {
-        if (umap[ransomNote[i]])
+        if (umap[ransomNote[i]] != 0)
         {
-            if (umap[ransomNote[i]] > 1)
-                umap[ransomNote[i]] = umap[ransomNote[i]] -= 1;
-            else
-                umap.erase(ransomNote[i]);
+            umap[ransomNote[i]]--;
         }
         else
         {
@@ -52,5 +42,5 @@ bool solution(string ransomNote, string magazine)
 
 int main()
 {
-    cout << solution("a", "b");
+    cout << solution("aa", "aba");
 }

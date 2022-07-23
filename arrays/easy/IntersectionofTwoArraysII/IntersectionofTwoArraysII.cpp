@@ -50,17 +50,10 @@ vector<int> solution(vector<int> &nums1, vector<int> &nums2)
 
     for (int value : nums2)
     {
-        if (counter[value])
+        if (counter.count(value) && counter[value] != 0)
         {
             result.push_back(value);
-            if (counter[value] == 1)
-            {
-                counter.erase(value);
-            }
-            else
-            {
-                counter[value] = counter[value] -= 1;
-            }
+            counter[value]--;
         }
     }
 
@@ -70,7 +63,7 @@ vector<int> solution(vector<int> &nums1, vector<int> &nums2)
 int main()
 {
     vector<int> test1 = {9, 4, 9, 8, 4};
-    vector<int> test2 = {4, 9, 5};
+    vector<int> test2 = {4, 9, 5, 4};
     vector<int> result = solution(test1, test2);
     for (int value : result)
     {
