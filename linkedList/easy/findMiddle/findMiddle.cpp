@@ -29,6 +29,9 @@ ListNode *solution(ListNode *head)
 {
     ListNode *slow = head;
     ListNode *fast = head;
+    // If odd at the end fast->next == null
+    // If even at the end fast == null
+    // !(fast == NULL || fast->next == NULL)
     while (fast != NULL && fast->next != NULL)
     {
         slow = slow->next;

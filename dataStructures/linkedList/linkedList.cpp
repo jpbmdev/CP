@@ -14,20 +14,15 @@ struct ListNode
 
 ListNode *createLinkedList(int size)
 {
-    ListNode *tail = new ListNode(size);
-    ListNode *head = tail;
+    ListNode *head = new ListNode(1);
+    ListNode *curr = head;
 
-    cout << head->val << endl;
-    cout << head->next << endl;
-    for (int i = size - 1; i >= 1; i--)
+    for (int i = 2; i <= size; i++)
     {
-        ListNode *node = new ListNode(i, head);
-        cout << node->val << endl;
-        cout << node->next << endl;
-        head = node;
+        ListNode *temp = new ListNode(i);
+        curr->next = temp;
+        curr = temp;
     }
-
-    cout << "-----" << endl;
 
     return head;
 }
@@ -41,7 +36,7 @@ int main()
     /*TRAVEL LINKED LIST*/
     while (head != NULL)
     {
-        cout << head->val << endl;
+        cout << head->val;
         head = head->next;
     }
 }
