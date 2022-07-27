@@ -11,9 +11,14 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums = {1, 2, 2, 3, 3, 5, 5, 4};
-    sort(nums.begin(), nums.end());
+    queue<int> cola;
 
-    vector<int> v = {1, 2, 2, 3, 3, 5, 5, 4};
-    reverse(v.begin(), v.end());
+    cola.push(33);
+    cola.push(33254);
+
+    cola.pop();
+
+    cout << cola.back() << endl;
+
+    cout << cola.empty();
 }
