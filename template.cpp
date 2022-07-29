@@ -1,11 +1,11 @@
 #include <iostream>
-#include <vector>
+#include <vector> //push_back
 #include <string>
-#include <unordered_map> //normal hash
-#include <unordered_set> //store keys only
+#include <unordered_map> //count erase
+#include <unordered_set> //count erase
 #include <algorithm>     //sort reverse
-#include <tuple>
-#include <queue>
+#include <tuple>         //first second
+#include <queue>         //push pop back size empty
 
 using namespace std;
 
