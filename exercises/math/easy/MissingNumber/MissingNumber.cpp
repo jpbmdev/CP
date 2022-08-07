@@ -12,6 +12,23 @@
 
 using namespace std;
 
+int missingNumber(vector<int> &nums)
+{
+    int sum = 0;
+
+    int total = (nums.size() * (nums.size() + 1)) / 2;
+
+    for (int value : nums)
+    {
+        sum += value;
+    }
+
+    return total - sum;
+}
+
 int main()
 {
+
+    vector<int> test = {9, 6, 4, 2, 3, 5, 7, 0, 1};
+    cout << missingNumber(test);
 }

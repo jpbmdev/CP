@@ -12,6 +12,21 @@
 
 using namespace std;
 
+uint32_t reverseBits(uint32_t n)
+{
+    uint32_t result = 0;
+    int k = 31;
+    while (k > 0)
+    {
+        result |= (n & 1);
+        result <<= 1;
+        n >>= 1;
+        k--;
+    }
+    return result |= (n & 1);
+}
+
 int main()
 {
+    cout << reverseBits(15);
 }

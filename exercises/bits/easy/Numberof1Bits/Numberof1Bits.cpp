@@ -7,11 +7,26 @@
 #include <tuple>         //first second
 #include <queue>         //push pop back size empty
 #include <stack>         //push pop top size empty
-#include <bitset>        //bitset<32>(n).to_string()
-#include <math.h>        //pow
 
 using namespace std;
 
+int hammingWeight(uint32_t n)
+{
+
+    int result = 0;
+
+    while (n > 0)
+    {
+        if (n & 1)
+            result++;
+        n = n >> 1;
+    }
+
+    return result;
+}
+
 int main()
 {
+    uint32_t test = 11;
+    cout << hammingWeight(test);
 }

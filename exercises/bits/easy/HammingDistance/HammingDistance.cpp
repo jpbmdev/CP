@@ -7,11 +7,25 @@
 #include <tuple>         //first second
 #include <queue>         //push pop back size empty
 #include <stack>         //push pop top size empty
-#include <bitset>        //bitset<32>(n).to_string()
-#include <math.h>        //pow
 
 using namespace std;
 
+int hammingDistance(int x, int y)
+{
+    int xo = x ^ y;
+    int counter = 0;
+
+    while (xo > 0)
+    {
+        if (xo & 1)
+            counter++;
+        xo >>= 1;
+    }
+
+    return counter;
+};
+
 int main()
 {
+    cout << hammingDistance(1, 4);
 }
