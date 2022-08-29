@@ -5,7 +5,7 @@
 #include <unordered_set> //store keys only
 #include <algorithm>     //sort reverse
 #include <tuple>
-#include <queue>
+#include <queue>         //push pop front back size empty
 
 using namespace std;
 
@@ -16,9 +16,11 @@ int main()
     cola.push(33);
     cola.push(33254);
 
+    cout << cola.front() << endl;
+
     cola.pop();
 
-    cout << cola.back() << endl;
+    cout << cola.front() << endl;
 
     cout << cola.empty();
 }
